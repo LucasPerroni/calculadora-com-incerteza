@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export default function Result({ value1, value2, type }) {
+export default function Result({ value1, value2, type, resultado }) {
   return (
     <ResultTag className="resultado">
       <p>
@@ -12,7 +12,7 @@ export default function Result({ value1, value2, type }) {
       </p>
       <span> = </span>
       <p>
-        {value2.valor} ± {value2.incerteza}
+        {resultado.valor} ± {resultado.incerteza}
       </p>
     </ResultTag>
   )

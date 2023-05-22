@@ -5,6 +5,7 @@ import AddIcon from "@mui/icons-material/Add"
 import RemoveIcon from "@mui/icons-material/Remove"
 import CloseIcon from "@mui/icons-material/Close"
 import PercentIcon from "@mui/icons-material/Percent"
+import DeleteSweepIcon from "@mui/icons-material/DeleteSweep"
 
 export default function Buttons({ setType }) {
   return (
@@ -20,6 +21,9 @@ export default function Buttons({ setType }) {
       </Fab>
       <Fab onClick={() => setType("/")} type="submit" color="primary" aria-label="add">
         <PercentIcon />
+      </Fab>
+      <Fab onClick={() => setType("clear")} type="submit" color="secondary" aria-label="add">
+        <DeleteSweepIcon />
       </Fab>
     </Box>
   )

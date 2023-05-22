@@ -10,6 +10,8 @@ export default function Input({ label, value, setValue }) {
       : setValue({ ...value, incerteza: Number(e.target.value) })
   }
 
+  
+
   return (
     <Box
       component="form"
