@@ -3,11 +3,11 @@ import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
 import { styled } from "@mui/material/styles"
 
-export default function Input({ label, valor, setValor }) {
+export default function Input({ label, value, setValue }) {
   function handleChange(e) {
     label === "Valor"
-      ? setValor({ ...valor, valor: Number(e.target.value) })
-      : setValor({ ...valor, incerteza: Number(e.target.value) })
+      ? setValue({ ...value, valor: Number(e.target.value) })
+      : setValue({ ...value, incerteza: Number(e.target.value) })
   }
 
   return (
