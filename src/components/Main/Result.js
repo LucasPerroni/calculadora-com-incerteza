@@ -18,7 +18,7 @@ export default function Result({ value1, value2, type, resultado }) {
   )
 }
 
-const ResultTag = styled.div`
+export const ResultTag = styled.div`
   display: flex;
   flex-direction: column;
 

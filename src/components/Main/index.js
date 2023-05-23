@@ -26,6 +26,7 @@ export default function Main() {
       setValue1({ valor: 0, incerteza: 0 })
       setValue2({ valor: 0, incerteza: 0 })
       setResultado({ valor: null, incerteza: null })
+      setType("")
     }
   }
 
@@ -40,6 +41,7 @@ export default function Main() {
           value2={value2}
           setValue1={setValue1}
           setValue2={setValue2}
+          type={type}
           setType={setType}
         />
 

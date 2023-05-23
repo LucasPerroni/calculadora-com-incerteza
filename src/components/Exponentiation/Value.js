@@ -1,32 +1,25 @@
 import styled from "styled-components"
 
-import Input from "./Input"
-import Buttons from "./Buttons"
-import Exponentiation from "./Exponentiation"
+import Input from "../Main/Input"
+import Exponentiation from "../Main/Exponentiation"
 
-export default function Values({ handleSubmit, value1, value2, setValue1, setValue2, type, setType }) {
+export default function Value({ handleSubmit, value, setValue, expoent, setExpoent, type, setType }) {
   return (
     <StyledForm onSubmit={(e) => handleSubmit(e)}>
       <div className="buttons">
         <Exponentiation setType={setType} />
       </div>
 
-      <p>Valor 1: </p>
+      <p>Valor: </p>
       <div className="valores">
-        <Input label="Valor" value={value1} setValue={setValue1} type={type} />
+        <Input label="Valor" value={value} setValue={setValue} type={type} />
         <p style={{ margin: "0" }}>±</p>
-        <Input label="Incerteza" value={value1} setValue={setValue1} type={type} />
+        <Input label="Incerteza" value={value} setValue={setValue} type={type} />
       </div>
 
-      <p>Valor 2: </p>
+      <p>Expoente/Índice: </p>
       <div className="valores">
-        <Input label="Valor" value={value2} setValue={setValue2} type={type} />
-        <p style={{ margin: "0" }}>±</p>
-        <Input label="Incerteza" value={value2} setValue={setValue2} type={type} />
-      </div>
-
-      <div className="buttons" style={{ margin: "30px 0" }}>
-        <Buttons setType={setType} />
+        <Input label="Expoente/Índice" value={expoent} setValue={setExpoent} type={type} />
       </div>
     </StyledForm>
   )

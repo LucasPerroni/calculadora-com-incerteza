@@ -38,4 +38,24 @@ function divisao(value1, value2) {
   return { valor, incerteza }
 }
 
-export const Math = { soma, subtracao, multiplicacao, divisao }
+function potencia(value, expoent) {
+  const maior = (value.valor + value.incerteza) ** expoent
+  const menor = (value.valor - value.incerteza) ** expoent
+
+  const valor = value.valor ** expoent
+  const incerteza = (maior - menor) / 2
+
+  return { valor, incerteza }
+}
+
+function raiz(value, expoent) {
+  const maior = (value.valor + value.incerteza) ** (1 / expoent)
+  const menor = (value.valor - value.incerteza) ** (1 / expoent)
+
+  const valor = value.valor ** (1 / expoent)
+  const incerteza = (maior - menor) / 2
+
+  return { valor, incerteza }
+}
+
+export const Math = { soma, subtracao, multiplicacao, divisao, potencia, raiz }

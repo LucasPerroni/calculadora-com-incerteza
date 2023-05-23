@@ -3,14 +3,22 @@ import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
 import { styled } from "@mui/material/styles"
 
-export default function Input({ label, value, setValue }) {
+export default function Input({ label, value, setValue, type }) {
+  const input = React.useRef()
+
   function handleChange(e) {
     label === "Valor"
       ? setValue({ ...value, valor: Number(e.target.value) })
-      : setValue({ ...value, incerteza: Number(e.target.value) })
+      : label === "Incerteza"
+      ? setValue({ ...value, incerteza: Number(e.target.value) })
+      : setValue(Number(e.target.value))
   }
 
-  
+  React.useEffect(() => {
+    if (type === "clear") {
+      input.current.childNodes[1].childNodes[0].value = null
+    }
+  }, [type])
 
   return (
     <Box
@@ -27,6 +35,7 @@ export default function Input({ label, value, setValue }) {
         label={label}
         variant="outlined"
         type="number"
+        ref={input}
         onChange={(e) => handleChange(e)}
       />
     </Box>
